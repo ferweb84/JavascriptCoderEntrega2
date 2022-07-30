@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Inversion</title>
+    <meta name="keywords" content="crypto, bolsa de inversion, acciones">
+    <meta name="description" content="cripto monedas, bolsa de inversion, acciones">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+        <a href="../index.html">
+            <img class="logo" class="img_fluid" src="../assets/img/logominotauro 250px.jpg" width="150" height="150"
+                alt="logo blog">
+        </a>
+        <div class="container-fluid">
+            <a class="navbar-brand mb-2 " href=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="../index.html">| Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="../page/crypto.html">| Crypto </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="../page/sobreNosotros.html">| Sobre Nosotros </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="../page/contacto.html">| Contacto </a>
+                    </li>
+                </ul>
+                <span class="navbar-text me-auto mb-2 mb-lg-2 ">
+
+                </span>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="header row d-flex alinge-items-around px-5 text-center">
+        <!-- <div class="headerIndex container-fluid px-5"> -->
+        <!-- <div class="text-center col-lg-6 me-auto mb-3 mt-4 mb-lg-2 col-sm-12"> -->
+
+        <div class="header-text text-center col-lg-12 me-auto  mt-5 mb-lg-2 col-sm-12">
+
+            <img src="./assets/img/bitcoin-g143a3f68a_1920.jpg" alt="">
+        </div>
+
+        <hr>
+        <h2 class="h2 ">'Queremos que cualquier lugar sea <br> "Tu lugar" en el mundo'.</h2>
+
+        <hr>
+        <!-- <div>
+        <img class="img-fluid z-depth-1-half w-50" src="./Assets/img/imagenessss.jpg" alt="">
+      </div> -->
+
+        <section class="container-fluid">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Ticker
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Bitcoin</a></li>
+                            <li><a class="dropdown-item" href="#">Ethereum</a></li>
+                            <li><a class="dropdown-item" href="#">Binance</a></li>
+                        </ul>
+                    </div>
+                <li class="list-group-item">Precio de Compra (Criptomoneda)</li>
+                <li class="list-group-item">Inversion (USDT)</li>
+                <li class="list-group-item">Valor en USDT</li>
+                <li class="list-group-item">Cantidad de Criptomoneda</li>
+                <li class="list-group-item">Precio Criptomoneda ($)</li>
+                <li class="list-group-item">% Porcentaje</li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                </li>
+            </ul>
+
+            <form id="formularioUsuario" action="">
+                <input type="text" id="nombre">
+                <input type="text" id="contrasenia">
+                <button id="btn">Ingresar</button>
+            </form>
+
+            <a id="fuentes" href="https://www.google.com/finance/?hl=es">Google Finance</a>
+
+            <form id="formulario" action="">
+                <p id="parrafo"></p>
+                <input type="text" id="texto">
+                <select id="ticker">
+                    <option value="1" href="https://www.google.com/finance/quote/BTC-ARS?hl=es">Bitcoin</option>
+                    <option value="2">Ethereum</option>
+                    <option value="3">Binance</option>
+                    <option value="4">Cake</option>
+                    <option value="5">Shiba</option>
+
+                </select>
+                <button id="btn">Enviar</button>
+
+
+            </form>
+
+
+
+
+            <main class="container-fluid p-0 m-0">
+                <div class="set row d-flex justify-content-center">
+                    <div class="col-9">
+                        <br>
+                        <h2 class="text-center">Somos el Camino al Exito...</h2>
+                        <h3 class="h4 text-center">Y vos estas en el...</h3>
+
+                        <hr>
+                        <p class="texto"> Tu objetivo a cumplir, una realidad a vivir lo antes posible, el resto es
+                            historia.
+                            La inversion ligados a las emociones y sensaciones es ya una tendencia mundial que
+                            esperas...
+                        </p>
+                        <hr>
+                    </div>
+                    <section class="text-center d-flex justify-content-center col-lg-12 me-auto   mb-lg-2 col-sm-12 ">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./assets/img/wallet.jpg" class="d-block" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5></h5>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/img/wallet.jpg" class="d-block" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5></h5>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/img/wallet.jpg" class="d-block " alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5></h5>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/img/wallet.jpg" class="d-block " alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5></h5>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+
+
+
+                        </div>
+
+
+
+                </div>
+
+            </main>
+    </header>
+
+
+
+
+
+
+
+
+
+
+    <footer class="bg-dark text-center text-white">
+        <div class="container p-4">
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/fernandogabriel.reyna"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/fernandoreyna21"
+                    role="button"><i class="fab fa-twitter"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/fernandoreyna21/"
+                    role="button"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.linkedin.com/in/fernando-reyna-8134a951/" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/ferweb84" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Suscríbete a nuestro boletín</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example21" class="form-control" />
+                                <label class="form-label" for="form5Example21">Direccion de Email</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4">
+                                Enviar
+                            </button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+
+            <!-- Section: Text -->
+            <section class="mb-3">
+                <h5 class="feature-title">
+                    "Vos encargate de soñarla, que nosotros nos encargamos de crearla".</h5>
+                <hr>
+                <p class="">Nuestra especialidad es la de interpretar cuál es la
+                    casa que siempre quisiste, entender cómo querés
+                    pasar el resto de tus días y hacerlo realidad.
+                    COMENCEMOS!
+                </p>
+            </section>
+        </div>
+        <!-- Grid container -->
+        <div class="text-center text-white" style="background-color: rgb(228, 51, 20);">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Images -->
+                <section class="">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                                data-ripple-color="light">
+                                <img src="./assets/img/wallet.jpg" class="w-100" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                                data-ripple-color="light"><img src="./assets/img/wallet.jpg" class="w-100" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                                data-ripple-color="light"><img src="./assets/img/wallet.jpg" class="w-100" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                                data-ripple-color="light"><img src="./assets/img/wallet.jpg" class="w-100" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                                data-ripple-color="light"><img src="./assets/img/wallet.jpg" class="w-100" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                                data-ripple-color="light"><img src="./assets/img/wallet.jpg" class="w-100" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </section>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);" !important>
+            © 2022 Copyright:
+            <a class="text-white" href="https://github.com/ferweb84">https://github.com/ferweb84</a>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
