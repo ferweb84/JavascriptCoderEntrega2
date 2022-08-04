@@ -15,6 +15,7 @@
 img {
     max-width: 100%;
     display: block;
+    border-radius: 5px;
 }
 
 .cart-btn {
@@ -63,6 +64,7 @@ img {
 
 .product-image {
     margin-bottom: 1em
+    
 }
 
 .add-to-cart {

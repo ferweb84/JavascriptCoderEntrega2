@@ -4,61 +4,25 @@ let cerrarCarrito = document.querySelector("#close-btn");
 let arrayCarrito = []
 
 class Producto{
-    constructor(id, nombre,categoria, imagen, precio) {
+    constructor(id, nombre, imagen, precio) {
         this.id = id;
         this.nombre = nombre;
-        this.categoria=categoria;
+
         this.imagen = imagen;
         this.precio = precio;
     }
 }
 
 let listaProductos = [
-    {id:1,nombre: "mate bitcoin",categoria:"accesorio",imagen:"./assets/img/mate bitcoin.jpg",precio:3000},
-    {id:2,nombre: 'gorra', categoria:' indumentaria',imagen:"./assets/img/remeraMinotauro.jpg",precio:1856},
-    {id:3,nombre: 'agenda', categoria:'papeleria',imagen:"./assets/img/remeraMinotauro.jpg",precio:1452},
-    {id:4,nombre: 'computadora',categoria:' informatica',imagen:"../assets/img/remeraMinotauro.jpg",precio:5651},
-    {id:5,nombre: 'lapicera', categoria:' papeleria',imagen:"../assets/img/remeraMinotauro.jpg",precio:1651},
-    {id:6,nombre: "mate ethereum",categoria:"accesorio",imagen:"./assets/img/mate bitcoin.jpg",precio:785},
-    {id:7,nombre: "mate binance",categoria:"accesorio",imagen:"./assets/img/mate bitcoin.jpg",precio:1452},
+    {id:1,nombre: "mate bitcoin",imagen:"./assets/img/mate bitcoin.jpg",precio:3000},
+    {id:2,nombre: 'gorra',imagen:"./assets/img/remeraMinotauro.jpg",precio:1856},
+    {id:3,nombre: 'agenda',imagen:"./assets/img/remeraMinotauro.jpg",precio:1452},
+    {id:4,nombre: 'computadora',imagen:"../assets/img/remeraMinotauro.jpg",precio:5651},
+    {id:5,nombre: 'lapicera',imagen:"../assets/img/remeraMinotauro.jpg",precio:1651},
+    {id:6,nombre: "mate ethereum",imagen:"./assets/img/mate bitcoin.jpg",precio:785},
+    {id:7,nombre: "mate binance",imagen:"./assets/img/mate bitcoin.jpg",precio:1452},
 
 ];
-
-//FUNCION PARA GUARDAR LOS DATOS 
-const guardarDatos= ()=> {
-    let id= document.getElementById("id").value;
-    let nombre = document.getElementById("nombre").value;
-    let categoria = document.getElementById("categoria").value;
-    let imagen=document.getElementById("imagen").value;
-    let precio = document.getElementById("precio").value;
-    let nuevoProd= new Producto (id,nombre, categoria,imagen,precio);
-
-    listaProductos.push(nuevoProd);
-    return nuevoProd;//en consola llamar a la funcion guardarDatos()
-}
-//crear e imprimir los productos 
-//Corregiiiir
-// function agregarHtml(){
-//     listaProductos.forEach((prod) =>{
-//         let nodo= document.createElement("card");
-
-//         cuotas=Math.round(prod.precio/12)
-//         nodo.setAttribute("class","card m-3");
-//         nodo.innerHTML= `<img src="${prod.imagen}" class="card-img-top" alt="card-grid-image"></img>
-//         <h5 class="card-title">${prod.nombre}</h5>
-//         <p class="card-text">${prod.categoria}</p>
-//         <span>U$S<b>${prod.precio}</b><imag class="w-25" src=""</span> 
-//         <button class="btn btn-danger button"> Agregar al carrito</button><br>
-//         <p class="hola text-success text-card my-2">Hasta en 12 cuotas de usd ${cuotas}</p>
-//         <p class="text-dark text-card my-2"><b><i class="fa-solid fa-truck-fast"></i>Ennvios a todo el pais><p/>
-//         `
-//         contenedor.appendChild(nodo);
-//         boton= document.getElementById(`${prod.id}`)
-//         boton.addEventListener("click",agregarCarrito)
-//     })
-// }
-// agregarHtml();
-
 
 
 //abrir y cerrar el carrito
@@ -97,6 +61,7 @@ function agregarCarrito(e) {
 
 }
 
+
 function agregarElemCarrito(producto){
     let contenedorCarrito = document.querySelector(".product-rows");
     let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
@@ -111,8 +76,46 @@ function agregarElemCarrito(producto){
     `
     cartQuantity();
 }
+    
 
+//funcion para la cantidad de elementos que tiene el carrito 
 function cartQuantity() {
     let cantidad = document.querySelector(".cart-quantity");
     cantidad.innerText = arrayCarrito.length;
 }
+
+//FUNCION PARA GUARDAR LOS DATOS 
+// const guardarDatos= ()=> {
+//     let id= document.getElementById("id").value;
+//     let nombre = document.getElementById("nombre").value;
+//     let categoria = document.getElementById("categoria").value;
+//     let imagen=document.getElementById("imagen").value;
+//     let precio = document.getElementById("precio").value;
+
+//     let nuevoProd= new Producto (id,nombre, categoria,imagen,precio);
+//     listaProductos.push(nuevoProd);
+//     return nuevoProd;
+// }
+//crear e imprimir los productos 
+//Corregiiiir
+// function agregarHtml(){
+//     listaProductos.forEach((prod) =>{
+//         let nodo= document.createElement("card");
+
+//         cuotas=Math.round(prod.precio/12)
+//         nodo.setAttribute("class","card m-3");
+//         nodo.innerHTML= `<img src="${prod.imagen}" class="card-img-top" alt="card-grid-image"></img>
+//         <h5 class="card-title">${prod.nombre}</h5>
+//         <p class="card-text">${prod.categoria}</p>
+//         <span>U$S<b>${prod.precio}</b><imag class="w-25" src=""</span> 
+//         <button class="btn btn-danger button"> Agregar al carrito</button><br>
+//         <p class="hola text-success text-card my-2">Hasta en 12 cuotas de usd ${cuotas}</p>
+//         <p class="text-dark text-card my-2"><b><i class="fa-solid fa-truck-fast"></i>Ennvios a todo el pais><p/>
+//         `
+//         contenedor.appendChild(nodo);
+//         boton= document.getElementById(`${prod.id}`)
+//         boton.addEventListener("click",agregarCarrito)
+//     })
+// }
+// agregarHtml();
+
