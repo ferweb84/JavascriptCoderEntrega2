@@ -37,13 +37,13 @@ class Producto {
     }
 }
 let listaProductos = [
-    {id:1,nombre: "mate bitcoin", precio: 3000,categoria:"accesorio",imagen:"./assets/img/mate bitcoin.jpg"},
-    {id:2,nombre: 'gorra', precio: 2500,categoria:' indumentaria',imagen:"./assets/img/remeraMinotauro.jpg"},
-    {id:3,nombre: 'agenda', precio: 1800,categoria:'papeleria',imagen:"./assets/img/remeraMinotauro.jpg"},
-    {id:4,nombre: 'computadora',precio: 80000,categoria:' informatica',imagen:"../assets/img/remeraMinotauro.jpg"},
-    {id:5,nombre: 'lapicera', precio: 700,categoria:' papeleria',imagen:"../assets/img/remeraMinotauro.jpg"},
-    {id:6,nombre: "mate ethereum'", precio: 3000,categoria:"accesorio",imagen:"./assets/img/mate bitcoin.jpg"},
-    {id:7,nombre: "mate binance'", precio: 3000,categoria:"accesorio",imagen:"./assets/img/mate bitcoin.jpg"},
+    {id:1,nombre: "mate bitcoin", precio: 3000,categoria:"accesorio",imagen:""},
+    {id:2,nombre: 'gorra', precio: 2500,categoria:' indumentaria',imagen:""},
+    {id:3,nombre: 'agenda', precio: 1800,categoria:'papeleria',imagen:""},
+    {id:4,nombre: 'computadora',precio: 80000,categoria:' informatica',imagen:""},
+    {id:5,nombre: 'lapicera', precio: 700,categoria:' papeleria',imagen:""},
+    {id:6,nombre: "mate ethereum'", precio: 3000,categoria:"accesorio",imagen:""},
+    {id:7,nombre: "mate binance'", precio: 3000,categoria:"accesorio",imagen:""},
 
 ];
 
@@ -53,7 +53,7 @@ const guardarDatos= ()=> {
     let nombre = document.getElementById("nombre").value;
     let precio = document.getElementById("precio").value;
     let categoria = document.getElementById("categoria").value;
-    let imagen=document.getElementById("imagen").value;
+    let imagen= document.getElementById("imagen").value;
     let nuevoProd= new Producto (id,nombre, precio, categoria,imagen);
 
     listaProductos.push(nuevoProd);
@@ -62,26 +62,26 @@ const guardarDatos= ()=> {
 
 //crear e imprimir los productos 
 
-function agregarHtml(){
-    listaProductos.forEach((prod) =>{
-        let nodo= document.createElement("card");
+// function agregarHtml(){
+//     listaProductos.forEach((prod) =>{
+//         let nodo= document.createElement("card");
 
-        cuotas=Math.round(prod.precio/12)
-        nodo.setAttribute("class","card m-3");
-        nodo.innerHTML= `<img src="${prod.imagen}" class="card-img-top" alt="card-grid-image"></img>
-        <h5 class="card-title">${prod.nombre}</h5>
-        <p class="card-text">${prod.categoria}</p>
-        <span>U$S<b>${prod.precio}</b><imag class="w-25" src=""</span> 
-        <button class="btn btn-danger button"> Agregar al carrito</button><br>
-        <p class="hola text-success text-card my-2">Hasta en 12 cuotas de usd ${cuotas}</p>
-        <p class="text-dark text-card my-2"><b><i class="fa-solid fa-truck-fast"></i>Ennvios a todo el pais><p/>
-        `
-        contenedor.appendChild(nodo);
-        boton= document.getElementById(`${prod.id}`)
-        boton.addEventListener("click",agregarAlCarrito)
-    })
-}
-agregarHtml();
+//         cuotas=Math.round(prod.precio/12)
+//         nodo.setAttribute("class","card m-3");
+//         nodo.innerHTML= `<img src="${prod.imagen}" class="card-img-top" alt="card-grid-image"></img>
+//         <h5 class="card-title">${prod.nombre}</h5>
+//         <p class="card-text">${prod.categoria}</p>
+//         <span>U$S<b>${prod.precio}</b><imag class="w-25" src=""</span> 
+//         <button class="btn btn-danger button"> Agregar al carrito</button><br>
+//         <p class="hola text-success text-card my-2">Hasta en 12 cuotas de usd ${cuotas}</p>
+//         <p class="text-dark text-card my-2"><b><i class="fa-solid fa-truck-fast"></i>Ennvios a todo el pais><p/>
+//         `
+//         contenedor.appendChild(nodo);
+//         boton= document.getElementById(`${prod.id}`)
+//         boton.addEventListener("click",agregarAlCarrito)
+//     })
+// }
+// agregarHtml();
 
 // //FUNCION PARA AGREGAR AL CARRITO
 // function addItemCarrito(newItem){
@@ -106,25 +106,25 @@ agregarHtml();
 
 // renderCarrito()
 
-// function renderCarrito(){
-//     tbody.innerHTML=''
-//     carrito.map(item=>{
-//         const tr=document.createElement('tr')
-//         tr.classList.add('ItemCarrito')
-//         const Content= `
-//         <th scope="row">1</th>
-//             <td class="table__productos"><img src=${item.img} alt="><h6 class="title">${item.title}</h6></td>
-//             <td class="table__price"><p>${item.precio}</p>"></td>
-//             <td class="table__cantidad"><input type="numer" min="1" value=${item.cantidad}class="input__elemento">
-//             <button class="delete btn btn-danger">x</button>
-//             </td>
+function renderCarrito(){
+    tbody.innerHTML=''
+    carrito.map(item=>{
+        const tr=document.createElement('tr')
+        tr.classList.add('ItemCarrito')
+        const Content= `
+        <th scope="row">1</th>
+            <td class="table__productos"><img src=${item.img} alt="><h6 class="title">${item.title}</h6></td>
+            <td class="table__price"><p>${item.precio}</p>"></td>
+            <td class="table__cantidad"><input type="numer" min="1" value=${item.cantidad}class="input__elemento">
+            <button class="delete btn btn-danger">x</button>
+            </td>
             
-//         `
-//         tr.innerHTML=Content; 
-//         tbody.append(tr)
+        `
+        tr.innerHTML=Content; 
+        tbody.append(tr)
 
-//         tr.querySelector(".delete").addEventListener('click',removeItemCarrito)
-//         tr.querySelector(".input__elemento").addEventListener('change',sumaCantidad)
-//     })
-//     CarritoTotal()
-// }
+        tr.querySelector(".delete").addEventListener('click',removeItemCarrito)
+        tr.querySelector(".input__elemento").addEventListener('change',sumaCantidad)
+    })
+    CarritoTotal()
+}

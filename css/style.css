@@ -1,8 +1,17 @@
+
 * {
     margin: 0;
     padding: 0;
 }
+.header{
+    background-color: gray;
+}
+.fondoCripto{
+   background-image: url(../assets/img/1366_521.jpg);
+   background-repeat: no-repeat;
+   
 
+}
 img {
     max-width: 100%;
     display: block;
@@ -41,9 +50,11 @@ img {
 .card {
     /*   width: 15rem; */
     margin: 1em;
+    background-color: rgb(223, 141, 41);
     position: relative;
     overflow: hidden;
     text-align: center
+    
 }
 
 .card:hover .add-to-cart {
