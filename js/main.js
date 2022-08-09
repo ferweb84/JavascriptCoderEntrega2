@@ -25,6 +25,39 @@ let listaProductos = [
 ];
 
 
+const llamarProductos =()=> {
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(listaProductos);
+        },3000);
+    })
+}
+
+let contenedor=document.querySelector("#cart");
+let boton=document.querySelector("#botonProductos");
+
+const mostrarProductos=(array)=>{
+    array.forEach(producto => {
+        contenedor.innerHTML +=`
+        <div>
+             <h3>${producto.title}</h3>
+             <img>${producto.image}</img>
+             <button>${producto.add-to-cart}</button>
+             <span>${producto.price}</span>
+        </div>
+        `        
+    })
+}
+boton.onclick=()=> {
+    llamarProductos()
+    .then(productos =>{
+        mostrarProductos(productos)
+    })
+    .catch(error => contenedor.innerHTML =error);
+    console.log("este codigo viene al final de todo");
+}
+
+
 //abrir y cerrar el carrito
 function abriCerrarCarrito() {
     if(carrito.classList.contains("open")) {
