@@ -7,7 +7,6 @@ class Producto{
     constructor(id, nombre, imagen, precio) {
         this.id = id;
         this.nombre = nombre;
-
         this.imagen = imagen;
         this.precio = precio;
     }
@@ -40,7 +39,7 @@ const mostrarProductos=(array)=>{
     array.forEach(producto => {
         contenedor.innerHTML +=`
         <div>
-             <h3>${producto.title}</h3>
+             <h3>${producto.title } </h3>
              <img>${producto.image}</img>
              <button>${producto.add-to-cart}</button>
              <span>${producto.price}</span>
@@ -48,6 +47,8 @@ const mostrarProductos=(array)=>{
         `        
     })
 }
+
+
 boton.onclick=()=> {
     llamarProductos()
     .then(productos =>{
@@ -55,8 +56,11 @@ boton.onclick=()=> {
     })
     .catch(error => contenedor.innerHTML =error);
     console.log("este codigo viene al final de todo");
-}
 
+let elementoNuevo= document.createElement("h2");
+elementoNuevo.setAttribute("id","caracteristicas");
+elementoNuevo.innerHTML="caracteristicas";
+console.log (elementoNuevo)
 
 //abrir y cerrar el carrito
 function abriCerrarCarrito() {
