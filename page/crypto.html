@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +10,68 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    <linkhref="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
+<!-- libreria grafica  -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Ticker');
+        data.addColumn('boolean', 'Esta en Mi Cartera');
+        data.addColumn('number', 'Invertido');
+        data.addColumn('number', 'Invertido en Usdt');
+        
+        data.addRows([
+          ['Bitcoin',true,  {v: 10000, f: '$10,000'},{v: 10000, f: 'Usdt10,000'}],
+          ['Ethereum',true,   {v:8000,   f: '$8,000'},{v: 10000, f: 'Usdt10,000'}  ],
+          ['Binance',false, {v: 12500, f: '$12,500'},{v: 10000, f: 'Usdt10,000'} ],
+          ['Shiba',false,   {v: 7000,  f: '$7,000'}, {v: 10000, f: 'Usdt10,000'} ]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '30%'});
+      }
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+     
+        function drawChart() {
+     
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Bitcoin',     11],
+            ['Ethereum',      2],
+            ['Binance',  2],
+            ['Shiba', 2],
+            ['Cake',    7]
+          ]);
+     
+          var options = {
+            title: 'Mi Cartera Crypto'
+          };
+     
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+     
+          chart.draw(data, options);
+        }
+      </script>
+ 
+ 
+<!-- ---------------------------------------------- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 
@@ -31,7 +79,7 @@
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
         <a href="../index.html">
-            <img class="logo" class="img_fluid" src="../assets/img/logominotauro 250px.jpg" width="150" height="150"
+            <img class="logo" class="img_fluid" src="../img/logominotauro 250px.jpg" width="150" height="150"
                 alt="logo blog">
         </a>
         <div class="container-fluid">
@@ -144,13 +192,7 @@
                 </tr>
             </table>
 
-
-
-
-
-
-
-            <main class="container-fluid p-0 m-0">
+            <!-- <main class="container-fluid p-0 m-0">
                 <div class="set row d-flex justify-content-center">
                     <div class="col-9">
                         <br>
@@ -166,7 +208,7 @@
                         <hr>
                     </div>
                     <section class="text-center d-flex justify-content-center col-lg-12 me-auto   mb-lg-2 col-sm-12 ">
-                        <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
                                     class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -217,22 +259,48 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
-
-
-
-                        </div> -->
-
-
-
+                        </div>
+                    </section> 
                 </div>
-
-            </main>
+            </main> -->
     </header>
+    <div>
+        <h2 id="tituloCrip" clas="tituloCrip">Minotaur Investementes Cryptomonedas</h2><br><hr>
+        <button id="boton-carriCrypto"><i class="fas fa-shopping-cart"></i><span id="contadorCarriCrypto">0</span></button>
+    </div>
+    
+    <select id="filtroCrypto">
+        <option value="all">Todas</option>
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="Shiba">Shiba</option>
+    </select>
+    <hr>
 
-
-
-
-
+    <div class="modal-contenedorCrypto">
+        <div class="modal-carriCrypto">
+            <h3>CarriCrypto</h3>
+            <button id="carriCryptoCerrar"><i class="fas fa-times-circle "></i></button>
+            <div id="carriCrypto-contenedorCrypto">
+                <!-- <div class="cryptoEnCarriCrypto">
+                    <p>Bitcoin Usdt</p>
+                    <p>Precio: $1200</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                </div> -->
+            </div>
+            <p class="tengoInvertido">Precio total: $<span id="precioTotal">0</span></p>
+            <p class="precioCryptoDeCompra">Precio total: $<span id="precioTotal">0</span></p>
+            <p class="precioCryptoDeCompraUsdt">Precio total: Usdt <span id="precioTotal">0</span></p>
+            
+            <button id="vaciar-carriCrypto" class="boton-agregar">Vaciar carriCrypto</button>
+        </div>
+    </div>
+    <section>
+        <div id="table_div"></div>
+    </section>
+    <section>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </section>
 
 
 
@@ -317,12 +385,12 @@
             <!-- Grid container -->
             <div class="container p-4">
                 <!-- Section: Images -->
-                <section class="">
+                <!-- <section class="">
                     <div class="row">
                         <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
                             <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
                                 data-ripple-color="light">
-                                <img src="../assets/img/mate1.webp" class="w-100" />
+                                <img src="../img/Lampara-6.webp" class="w-100" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
                                     </div>
@@ -376,24 +444,19 @@
                     </div>
             </div>
         </div>
-        </section>
+        </section> -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);" !important>
             © 2022 Copyright:
             <a class="text-white" href="https://github.com/ferweb84">https://github.com/ferweb84</a>
         </div>
     </footer>
 
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-
-    <script src="../js/crypto.js"></script>
+    <script src="../crypto.js"></script>
+    <script src="../cryptoapp.js"></script>
 
 </body>
 
