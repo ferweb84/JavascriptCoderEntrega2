@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarriCrypto()
     }
 })
-//SEXTO PASO
+
 botonVaciar.addEventListener('click', () => {
     carriCrypto.length = 0
     actualizarCarriCrypto()
@@ -89,12 +89,10 @@ const actualizarCarriCrypto = () => {
         localStorage.setItem('carriCrypto', JSON.stringify(carriCrypto))
 
     })
-    //SEPTIMO PASO
+  
     contadorCarriCrypto.innerText = carriCrypto.length 
     
     console.log(carriCrypto)
     precioTotal.innerText = carriCrypto.reduce((acc, cryp) => acc + cryp.cantidad * cryp.precio, 0)
-    //Por cada producto q recorro en mi carrito, al acumulador le suma la propiedad precio, con el acumulador
-    //empezando en 0.
-
+   
 }
