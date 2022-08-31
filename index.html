@@ -21,12 +21,18 @@
     <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    
+    <!-- formulario de contacto emailjs -->
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">emailjs.init('1zHool9GL-wwujzE_')</script>
+
+<link rel="stylesheet" href="../css/styles.css">
     
 </head>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
     <a href="./index.html">
-        <img class="logo" class="img_fluid" src="./img/logominotauro 250px.jpg" width="150" height="150"
+        <img class="logo" class="img_fluid" src="./img/logoBuy.png" 
             alt="logo blog">
     </a>
     <div class="container-fluid">
@@ -36,7 +42,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-2">
+            <ul class="navbar-nav me-auto ">
                 <li class="nav-item">
                     <a class="nav-link active " aria-current="page" href="./index.html">| Home </a>
                 </li>
@@ -51,6 +57,7 @@
                     <a class="nav-link " aria-current="page" href="./page/contacto.html">| Contacto </a>
                 </li>
             </ul>
+            <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
             <span class="navbar-text me-auto mb-2 mb-lg-2 ">
 
             </span>
@@ -59,17 +66,17 @@
 </nav>
 
 <body>
-    <header >
-        <h2 id="titulo" class="titulo">Minotaur Investementes Product's</h2>
-        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+    <header class="text-center">
+        <h2 id="titulo" class="titulo">Buy & Hold Product's</h2>
+
     </header>
 
-    <select id="filtroTalle">
+    <!-- <select id="filtroTalle">
         <option value="all">Todos</option>
         <option value="L">Large</option>
         <option value="M">Medium</option>
         <option value="S">Small</option>
-    </select>
+    </select> -->
 
     <main id="contenedor-productos">
 
@@ -97,9 +104,8 @@
         <div class="container p-4">
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1"
-                    href="https://www.facebook.com/fernandogabriel.reyna" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/fernandogabriel.reyna"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
                 <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/fernandoreyna21"
@@ -115,44 +121,36 @@
                         class="fab fa-linkedin-in"></i></a>
 
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/ferweb84"
-                    role="button"><i class="fab fa-github"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/ferweb84" role="button"><i
+                        class="fab fa-github"></i></a>
             </section>
+            <hr >
 
-            <!-- Section: Form -->
-            <section class="">
-                <form action="">
-                    <!--Grid row-->
-                    <div class="row d-flex justify-content-center">
-                        <!--Grid column-->
-                        <div class="col-auto">
-                            <p class="pt-2">
-                                <strong>Suscríbete a nuestro boletín</strong>
-                            </p>
-                        </div>
-                        <!--Grid column-->
 
-                        <!--Grid column-->
-                        <div class="col-md-6 col-12">
-                            <!-- Email input -->
-                            <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example21" class="form-control" />
-                                <label class="form-label" for="form5Example21">Direccion de Email</label>
-                            </div>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-auto">
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-outline-light mb-4">
-                                Enviar
-                            </button>
-                        </div>
-                        <!--Grid column-->
+                <div class="row d-flex justify-content-center col-md-12 col-6 ">
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Suscríbete a nuestro boletín</strong>
+                        </p>
                     </div>
-                    <!--Grid row-->
-                </form>
+
+                <form id="form">
+                    <div class="field row d-flex justify-content-center col-xs-12 col-md-12 col-lg-12">
+                      <label for="from_name">Nombre y Apellido</label>
+                      <input type="text" name="from_name" id="from_name">
+                    </div>
+                    <div class="field row d-flex justify-content-center col-md-12 col-lg-12">
+                      <label for="message">Mensaje</label>
+                      <input type="text" name="message" id="message">
+                    </div>
+                    <div class="field row d-flex justify-content-center col-md-12 col-lg-12">
+                      <label for="email_id">Direccion de Email</label>
+                      <input type="text" name="email_id" id="email_id">
+                    </div>                
+                    <input type="submit" id="button" value="Enviar Email" class="row d-flex justify-content-center col-md-12 col-lg-12"  >
+                    <input type="button" onclick="limpiarFormulario()" value="Limpiar formulario" class="limpiarForm">
+                  </form>
+                </div>
             </section>
             <!-- Section: Form -->
 
@@ -169,67 +167,12 @@
             </section>
         </div>
         <!-- Grid container -->
-        <div class="text-center text-white" style="background-color: rgb(228, 51, 20);">
+        <div class="text-center text-white" style="background-color: #be4414;">
             <!-- Grid container -->
             <div class="container p-4">
                 <!-- Section: Images -->
                 <section class="">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light">
-                                <img src="" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
             </div>
         </div>
         </section>
@@ -239,11 +182,16 @@
         </div>
     </footer>
 
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script defer src="modal.js"></script>
-<script defer src="app.js"></script>
+<script defer src="./js/modal.js"></script>
+<script defer src="./js/app.js"></script>
+<script src="../js/suscripcion.js"></script>
 </body>
 </html>

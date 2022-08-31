@@ -71,7 +71,13 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../css/styles.css">
+<!-- formulario de contacto emailjs -->
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">emailjs.init('1zHool9GL-wwujzE_')</script>
+
+<link rel="stylesheet" href="../css/styles.css">
+
 
 </head>
 
@@ -305,7 +311,6 @@
 
 
 
-
     <footer class="bg-dark text-center text-white">
         <div class="container p-4">
             <section class="mb-4">
@@ -330,41 +335,33 @@
                 <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/ferweb84" role="button"><i
                         class="fab fa-github"></i></a>
             </section>
+            <hr >
 
-            <!-- Section: Form -->
-            <section class="">
-                <form action="">
-                    <!--Grid row-->
-                    <div class="row d-flex justify-content-center">
-                        <!--Grid column-->
-                        <div class="col-auto">
-                            <p class="pt-2">
-                                <strong>Suscríbete a nuestro boletín</strong>
-                            </p>
-                        </div>
-                        <!--Grid column-->
 
-                        <!--Grid column-->
-                        <div class="col-md-6 col-12">
-                            <!-- Email input -->
-                            <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example21" class="form-control" />
-                                <label class="form-label" for="form5Example21">Direccion de Email</label>
-                            </div>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-auto">
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-outline-light mb-4">
-                                Enviar
-                            </button>
-                        </div>
-                        <!--Grid column-->
+                <div class="row d-flex justify-content-center col-md-12 col-6 ">
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Suscríbete a nuestro boletín</strong>
+                        </p>
                     </div>
-                    <!--Grid row-->
-                </form>
+
+                <form id="form">
+                    <div class="field row d-flex justify-content-center col-xs-12 col-md-12 col-lg-12">
+                      <label for="from_name">Nombre y Apellido</label>
+                      <input type="text" name="from_name" id="from_name">
+                    </div>
+                    <div class="field row d-flex justify-content-center col-md-12 col-lg-12">
+                      <label for="message">Mensaje</label>
+                      <input type="text" name="message" id="message">
+                    </div>
+                    <div class="field row d-flex justify-content-center col-md-12 col-lg-12">
+                      <label for="email_id">Direccion de Email</label>
+                      <input type="text" name="email_id" id="email_id">
+                    </div>                
+                    <input type="submit" id="button" value="Enviar Email" class="row d-flex justify-content-center col-md-12 col-lg-12"  >
+                    <input type="button" onclick="limpiarFormulario()" value="Limpiar formulario" class="limpiarForm">
+                  </form>
+                </div>
             </section>
             <!-- Section: Form -->
 
@@ -381,70 +378,15 @@
             </section>
         </div>
         <!-- Grid container -->
-        <div class="text-center text-white" style="background-color: rgb(228, 51, 20);">
+        <div class="text-center text-white" style="background-color: #be4414;">
             <!-- Grid container -->
             <div class="container p-4">
                 <!-- Section: Images -->
-                <!-- <section class="">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light">
-                                <img src="../img/Lampara-6.webp" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="../assets/img/mate1.webp" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="../assets/img/mate1.webp" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="../assets/img/mate1.webp" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="../assets/img/mate1.webp" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light"><img src="../assets/img/mate1.webp" class="w-100" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <section class="">
+
             </div>
         </div>
-        </section> -->
+        </section>
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);" !important>
             © 2022 Copyright:
             <a class="text-white" href="https://github.com/ferweb84">https://github.com/ferweb84</a>
@@ -455,8 +397,11 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="../crypto.js"></script>
     <script src="../cryptoapp.js"></script>
+    <script src="../js/suscripcion.js"></script>
 
 </body>
 
