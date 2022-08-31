@@ -1,4 +1,4 @@
-const validarCampos = ()=> {
+const validarCampos = () => {
     let nombre = document.getElementById("nombre").value;
     let nombreError = document.getElementById("nombreError");
     let telefono = document.getElementById("telefono").value;
@@ -11,64 +11,70 @@ const validarCampos = ()=> {
     let comentarioError = document.getElementById("comentarioError");
 
     //trim para sacarle los espacios del medio 
-    if (nombre.trim() == ""){
-        nombreError.innerHTML ="Falta completar el campo Nombre!";
-        nombreError.className="text-danger";
+    if (nombre.trim() == "") {
+        nombreError.innerHTML = "Falta completar el campo Nombre!";
+        nombreError.className = "text-danger";
         return false;
         //se coloca un return false por las dudas que tengamos el campo vacio "nombre", asi lo detiene ahi 
-    }else{
-        nombreError.innerHTML ="";
+    } else {
+        nombreError.innerHTML = "";
         //se coloca para el caso que este completo correctamente no me aparezca el error
     }
-    
-    if (telefono.trim() == ""){
-        telefonoError.innerHTML ="Falta completar el campo Telefono!";
-        telefonoError.className="text-danger";
+
+    if (telefono.trim() == "") {
+        telefonoError.innerHTML = "Falta completar el campo Telefono!";
+        telefonoError.className = "text-danger";
         return false;
-    }else{
-        telefonoError.innerHTML ="";
+    } else {
+        telefonoError.innerHTML = "";
     }
 
-    if (email.trim() == ""){
-        emailError.innerHTML ="Falta completar el campo Email!";
-        emailError.className="text-danger";
+    if (email.trim() == "") {
+        emailError.innerHTML = "Falta completar el campo Email!";
+        emailError.className = "text-danger";
         return false;
-    }else{
-        emailError.innerHTML ="";
+    } else {
+        emailError.innerHTML = "";
     }
-    
-    if (password.trim() == ""){
-        passwordError.innerHTML ="Falta completar el campo Password!";
-        passwordError.className="text-danger";
+
+    if (password.trim() == "") {
+        passwordError.innerHTML = "Falta completar el campo Password!";
+        passwordError.className = "text-danger";
         return false;
-    }else{
-        passwordError.innerHTML ="";
+    } else {
+        passwordError.innerHTML = "";
     }
-    if (comentario.trim() == ""){
-        comentarioError.innerText ="Falta completar el campo Comentario!";
-        comentarioError.className="text-danger";
+    if (comentario.trim() == "") {
+        comentarioError.innerText = "Falta completar el campo Comentario!";
+        comentarioError.className = "text-danger";
         return false;
-    }else{
-        comentario.innerText ="";
+    } else {
+        comentario.innerText = "";
     }
 
 
     //llamamos a funcion guardar datos
-    guadarDatos(nombre, telefono, email, password,comentario);
+    guadarDatos(nombre, telefono, email, password, comentario);
 
     //llamamos a funcion recuperar datos / informacion de todos los datos que guardamos en la localStorage
-    const datosUsuario=recuperarDatos();
-    document.getElementById("resultado").innerHTML=`<p>Nombre:${datosUsuario.nombreUsuario}<br> Telefono: ${datosUsuario.telefonoUsuario}<br> Email: ${datosUsuario.emailUsuario}<br>Password: ${datosUsuario.passwordUsuario}<br>Comentario: ${datosUsuario.comentarioUsuario}</p>`;
-    document.getElementById("resultado").className="bg-light fs-4";
+    const datosUsuario = recuperarDatos();
+    document.getElementById("resultado").innerHTML = `<p>Nombre:${datosUsuario.nombreUsuario}<br> Telefono: ${datosUsuario.telefonoUsuario}<br> Email: ${datosUsuario.emailUsuario}<br>Password: ${datosUsuario.passwordUsuario}<br>Comentario: ${datosUsuario.comentarioUsuario}</p>`;
+    document.getElementById("resultado").className = "bg-light fs-4";
 
 }
 //objeto Guardamos los datos
-const guadarDatos =(nombre, telefono, email, password,comentario)=> {
-    const datos = {nombreUsuario:nombre, telefonoUsuario: telefono, emailUsuario: email, passwordUsuario:password, comentarioUsuario:comentario}
+const guadarDatos = (nombre, telefono, email, password, comentario) => {
+    const datos = {
+        nombreUsuario: nombre,
+        telefonoUsuario: telefono,
+        emailUsuario: email,
+        passwordUsuario: password,
+        comentarioUsuario: comentario
+    }
     localStorage.setItem("datosUsuario", JSON.stringify(datos));
 }
 // objeto recuperamos los datos, proceso inverso al anterior
-const recuperarDatos =()=>{
+const recuperarDatos = () => {
     return JSON.parse(localStorage.getItem("datosUsuario"));
 }
 
@@ -76,4 +82,7 @@ const recuperarDatos =()=>{
 document.getElementById("btnEnviar").onclick = validarCampos;
 
 
+function limpiarFormulario() {
+    document.getElementById('form').reset();
 
+}

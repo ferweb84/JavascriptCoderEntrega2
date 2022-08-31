@@ -37,6 +37,7 @@ body{
 img {
     width: 100%;
     margin-bottom: 10px;
+    height: 50%;
 }
 header {
     padding: 12px 10%;
@@ -44,14 +45,14 @@ header {
     background-color:#be4414;
 }
 h1 {
-    color: royalblue;
+    color:#be4414;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 50px;
 }
 #boton-carrito {
     border: none;
-    color: rgb(165, 158, 158);
+    color:white;
     font-size: 20px;
     background-color:#be4414;
     border-radius: 20%;
@@ -69,6 +70,8 @@ h1 {
 }
 
 #contenedor-productos {
+    font-family:cursive;
+    text-align: center;
     max-width: 1200px;
     margin: 10px auto;
     display: flex;
@@ -82,28 +85,34 @@ p {
     line-height: 1.8;
 }
 .producto {
+    background-color: rgb(230, 147, 47);
+    border-radius: 5px;
     max-width: 20%;
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
     margin-bottom: 20px;
     box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
 }
 .precioProducto {
-    font-weight: 700;
+    font-weight: 900;
 }
 .boton-agregar {
-    background-color: royalblue;
+    background-color:#be4414;
     color: white;
     font-size: 18px;
     font-weight: 700;
     padding: 5px;
     border: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .boton-agregar:hover {
     cursor: pointer;
+    
 }
 .boton-agregar:focus {
     outline: none;
+    
 }
 
 .modal-contenedor {
@@ -139,7 +148,7 @@ p {
 }
 
 .modal-carrito h3 {
-    color: royalblue;
+    color:#be4414;
     padding-bottom: 5px;
 }
 .modal-carrito #carritoCerrar {
@@ -147,7 +156,7 @@ p {
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: royalblue;
+    color:#be4414;
     border: none;
     background-color: white;
 }
@@ -177,7 +186,7 @@ p {
 
 .boton-eliminar {
     background-color: white;
-    color: red;
+    color:black;
     border: none;
     font-size: 20px;
 }
@@ -226,6 +235,7 @@ p {
   }
 
   .limpiarForm {
+    border: none;
     color: #ffffff;
     margin: 15px;
     background-color: grey;
@@ -233,7 +243,9 @@ p {
     font-size: 15px;
 
 }
-
+.limpiarForm2{
+    border:none;
+}
 .fondoCrypto{
     background-color: bisque;
     font-family:Georgia, 'Times New Roman', Times, serif;

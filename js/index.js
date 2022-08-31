@@ -5,6 +5,10 @@ const contenedorProductos = document.getElementById('contenedor-productos')
 const contenedorCarrito = document.getElementById('carrito-contenedor')
 //SEXTO PASO
 const botonVaciar = document.getElementById('vaciar-carrito')
+
+const botonRealizarCompra= document.getElementById('realizarCompraCarrito')
+
+
 //SEXTIMO PASO, MODIFICAR LOS CONTADORES
 const contadorCarrito = document.getElementById('contadorCarrito')
 
@@ -21,11 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
+
 //SEXTO PASO
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
     actualizarCarrito()
 })
+
 
 //PRIMER PRIMER PASO, INYECTAR EL HTML
 stockProductos.forEach((producto) => {
@@ -129,3 +135,15 @@ const actualizarCarrito = () => {
     //empezando en 0.
 
 }
+
+botonRealizarCompra.addEventListener("click",() => {
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        color: "rgb(190, 68, 20)",
+        title: 'Se ha realizado la compra exitosamente',
+        footer: "Muchas Gracias... Vuelva Prontos",
+        showConfirmButton: false,
+        timer: 3000
+      })
+})
